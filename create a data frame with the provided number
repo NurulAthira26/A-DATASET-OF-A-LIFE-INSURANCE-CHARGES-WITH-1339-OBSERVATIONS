@@ -1,0 +1,18 @@
+import pandas as pd
+
+# Create a DataFrame with the provided values
+data = pd.DataFrame({
+    'age': [18, 39, 51],
+    'bmi': [15.96, 30.664581, 34.695],
+    'children': [0, 1.094918, 2],
+    'charges': [1121.87, 13270.422414, 16639.915]
+})
+
+# Calculate measures of position
+position_measures = data.agg(['min', 'max', lambda x: x.max() - x.min(), lambda x: x.quantile(0.25),
+                             lambda x: x.quantile(0.50), lambda x: x.quantile(0.75)])
+position_measures = position_measures.transpose()
+
+position_measures.columns = ['Minimum', 'Maximum', 'Range', '25th Percentile', '50th Percentile', '75th Percentile']
+
+print(position_measures)
