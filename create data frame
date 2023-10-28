@@ -1,0 +1,15 @@
+import pandas as pd
+
+# Create a DataFrame with the provided values
+data = pd.DataFrame({
+    'age': [18, 39, 51],
+    'bmi': [15.96, 30.664581, 34.695],
+    'children': [0, 1.094918, 2],
+    'charges': [1121.87, 13270.422414, 16639.915]
+})
+
+# Calculate central tendency measures
+central_tendency = data.describe().transpose()
+central_tendency = central_tendency[['count', 'mean', 'std', 'min', '25%', '50%', '75%', 'max']]
+
+print(central_tendency)
