@@ -1,0 +1,12 @@
+import matplotlib.pyplot as plt
+
+# Create a chart of 'age'
+plt.hist(data['age'], bins=10, edgecolor='black')
+
+# Add labels and title
+plt.xlabel('BMI')
+plt.ylabel('AGE')
+plt.title('Distribution of Age')
+
+# Display the histogram
+plt.show()
