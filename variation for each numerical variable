@@ -1,0 +1,7 @@
+import pandas as pd
+
+# Measures of variation for each numerical variable
+variation_measures = data[numerical_vars].agg(['std', 'var', 'skew', 'kurt']).transpose()
+variation_measures.columns = ['Standard Deviation', 'Variance', 'Skewness', 'Kurtosis']
+print("\nMeasures of Variation:\n")
+print(variation_measures)
