@@ -1,0 +1,7 @@
+from google.colab import files
+import io
+import pandas as pd
+
+uploaded = files.upload()
+
+data = pd.read_csv(io.BytesIO(uploaded['Dataset C.csv']))
